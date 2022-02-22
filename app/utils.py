@@ -62,9 +62,9 @@ class Model:
                             })
 
 def preprocess(text,stopwords,tagger_ins): # Peter Vajdecka 5.11.2020
-  """
-  Function preprocess text such as substract unwanted symbols, tokenize, lemmatize, 
-  """
+    """
+     Function preprocess text such as substract unwanted symbols, tokenize, lemmatize, 
+    """
     temp =[]
     sent = []
     
@@ -91,10 +91,10 @@ def preprocess(text,stopwords,tagger_ins): # Peter Vajdecka 5.11.2020
     return sent  
 
 def transporttoTfIdf(train_df,tf_idf_ins):
-  """
-  Function transform text matrix to tf-idf matrix
-  """
-    #1.Independent variables
+    """
+       Function transform text matrix to tf-idf matrix
+    """
+    # 1.Independent variables
     tf_id = tf_idf_ins
     train_df = tf_idf_ins.fit_transform(train_df)
     train_df = pd.DataFrame(train_df.toarray())
@@ -103,9 +103,9 @@ def transporttoTfIdf(train_df,tf_idf_ins):
     return train_df
 
 def wordCloud(input_df,stop_words,tagger,tf_idf):
-  """
-  Function to nicely visulize most frequent words
-  """
+    """
+       Function to nicely visulize most frequent words
+    """
     df_trans=preprocess(input_df,stop_words,tagger)
     df_trans= transporttoTfIdf(df_trans,tf_idf)
     cl= WordCloud(background_color='white', stopwords=stop_words).generate_from_frequencies(df_trans.T.sum(axis=1))
@@ -117,11 +117,11 @@ def plot_confusion_matrix(cm, classes,
                           title='Confusion matrix',
                           cmap=plt.cm.RdPu):
     """
-    This function prints and plots the confusion matrix.
-    Normalization can be applied by setting `normalize=True`.
+        This function prints and plots the confusion matrix.
+        Normalization can be applied by setting `normalize=True`.
     """
 
-    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.imshow(cm, interpolation='nearest', cmap=cmapS)
     plt.title(title)
     plt.colorbar()
     tick_marks = np.arange(len(classes))
