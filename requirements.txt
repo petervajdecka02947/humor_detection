@@ -1,0 +1,15 @@
+corpy==0.4.0
+fastapi
+joblib
+matplotlib==3.5.1
+numpy
+pandas
+pydantic
+python-dateutil
+regex==2021.11.10
+scikit-learn==0.23.1
+ufal.morphodita==1.10.1.1
+ufal.udpipe==1.2.0.3
+uvicorn==0.16.0
+wordcloud==1.8.1
+nltk

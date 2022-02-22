@@ -1,0 +1,15 @@
+{
+    "api": {
+      "title": "HUMOR DETECTION API",
+      "version": "0.0.1",
+      "description": "API which  predict whether a text is funny or not"},
+
+    "model": {
+        "model_dir": "./app/Models/logistic_regression.joblib",
+        "tfidf_dir": "./app/Models/tf_idf.joblib",
+        "tagger_dir": "./app/Models/english-morphium-wsj-140304.tagger",
+        "stopwords_path": "./app/Data/stopwords.csv"
+      }
+
+}
+
