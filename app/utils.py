@@ -62,7 +62,9 @@ class Model:
                             })
 
 def preprocess(text,stopwords,tagger_ins): # Peter Vajdecka 5.11.2020
-  # text preprocessing
+  """
+  Function preprocess text such as substract unwanted symbols, tokenize, lemmatize, 
+  """
     temp =[]
     sent = []
     
@@ -89,7 +91,9 @@ def preprocess(text,stopwords,tagger_ins): # Peter Vajdecka 5.11.2020
     return sent  
 
 def transporttoTfIdf(train_df,tf_idf_ins):
-    #function trnsform matrix to tf-idf matrix
+  """
+  Function transform text matrix to tf-idf matrix
+  """
     #1.Independent variables
     tf_id = tf_idf_ins
     train_df = tf_idf_ins.fit_transform(train_df)
@@ -99,6 +103,9 @@ def transporttoTfIdf(train_df,tf_idf_ins):
     return train_df
 
 def wordCloud(input_df,stop_words,tagger,tf_idf):
+  """
+  Function to nicely visulize most frequent words
+  """
     df_trans=preprocess(input_df,stop_words,tagger)
     df_trans= transporttoTfIdf(df_trans,tf_idf)
     cl= WordCloud(background_color='white', stopwords=stop_words).generate_from_frequencies(df_trans.T.sum(axis=1))
